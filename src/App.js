@@ -19,9 +19,11 @@ function App() {
 
 	return (
 		<div className="App">
-			<h3>Feeling hungry?</h3>
-			<h5>Get a random meal by clicking below</h5>
-			<Button variant="contained" onClick={() => fetchRecipe()}>Get Meal 🍔</Button>
+			<div id="main">
+				<h2>Feeling hungry?</h2>
+				<h5>Get a random meal by clicking below</h5>
+				<Button variant="contained" onClick={() => fetchRecipe()}>Get Meal 🍔</Button>
+			</div>
 			{
 				recipe &&
 

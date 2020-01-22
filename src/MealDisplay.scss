@@ -5,5 +5,12 @@
     img {
         width: 100%;
     }
-    // test
+
+    ul {
+        list-style-type: circle;
+
+        .meal-ingredient {
+            padding: 5px 0;
+        }
+    }
 }
