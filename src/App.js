@@ -10,7 +10,6 @@ function App() {
 		let res = await fetch("https://www.themealdb.com/api/json/v1/1/random.php");
 		res = await res.json();
 		setRecipe(res.meals[0]);
-		console.log(res.meals[0])
 	}
 
 	return (
