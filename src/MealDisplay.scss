@@ -2,15 +2,60 @@
     padding: 20px;
     text-align: left;
 
-    img {
-        width: 100%;
-    }
-
-    ul {
-        list-style-type: circle;
-
-        .meal-ingredient {
-            padding: 5px 0;
+    .left-column {
+        
+        img {
+            width: 100%;
+        }
+    
+        ul {
+            list-style-type: circle;
+    
+            .meal-ingredient {
+                padding: 5px 0;
+            }
         }
     }
+
+    .right-column {
+
+        .instructions {
+            line-height: 200%;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+    .meal-container {
+        
+        .columns {
+            display: flex;
+            flex-direction: row;
+
+            .left-column {
+                
+                img {
+                    width: 300px;
+                }
+            
+                // ul {
+    
+            
+                //     .meal-ingredient {
+    
+                //     }
+                // }
+            }
+        
+            .right-column {
+                margin-left: 30px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1025px) {
+
+    
 }

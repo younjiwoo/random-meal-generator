@@ -3,20 +3,24 @@ import './IngredientList.scss';
 
 function IngredientList({ recipe }) {
 
-    const ingredients = [];
+    const ingredientKeys = Object.keys(recipe);
 
-    const ingredientKeys = Object.keys(recipe).filter(k => { 
-        return k.includes('strIngredient') && recipe[k] !== ""
-    });
+    let hash = {
+        ingredient: [],
+        measure: []
+    };
+    
+    ingredientKeys.forEach((key, i) => {
+        if (key.includes('strIngredient') && recipe[key] && recipe[key] !== "") {
+            const idx = key.slice(13);
+            hash.ingredient[idx] = recipe[key];
+            hash.measure[idx] = recipe[`strMeasure${idx}`];
+        }
 
-    const numOfIngredients = ingredientKeys.length;
+    })
 
-    for (let i = 0; i < numOfIngredients; i++) {
-        ingredients.push(`${recipe[`strIngredient${i + 1}`]} - ${recipe[`strMeasure${i + 1}`]}`);
-    }
-
-    return ingredients.map((ingredient, idx) => {
-        return <li className="meal-ingredient" key={idx}>{ingredient}</li>
+    return hash.ingredient.map((ingre, i) => {
+        return <li className="meal-ingredient" key={i}>{`${ingre} - ${hash.measure[i]}`}</li>
     });
 }
 
