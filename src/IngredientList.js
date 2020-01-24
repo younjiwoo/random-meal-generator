@@ -16,7 +16,6 @@ function IngredientList({ recipe }) {
             hash.ingredient[idx] = recipe[key];
             hash.measure[idx] = recipe[`strMeasure${idx}`];
         }
-
     })
 
     return hash.ingredient.map((ingre, i) => {
