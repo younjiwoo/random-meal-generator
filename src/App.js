@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import MealDisplay from './MealDisplay.js';
 import './App.scss';
 import Button from '@material-ui/core/Button';
@@ -17,7 +17,7 @@ function App() {
 			<div id="main">
 				<h2>Feeling hungry?</h2>
 				<h5>Get a random meal by clicking below</h5>
-				<Button variant="contained" onClick={() => fetchRecipe()}>Get Meal 🍔</Button>
+				<Button variant="contained" onClick={() => fetchRecipe()}>Get Meal <span role="img" aria-label="hamburger emoji">🍔</span></Button>
 			</div>
 			{
 				recipe &&

@@ -13,7 +13,7 @@ function MealDisplay({ data: meal }) {
 		<div className="columns">
 
 			<div className="left-column">
-				<img src={strMealThumb} alt={`Image of ${strMeal}`} />
+				<img src={strMealThumb} alt={`${strMeal}`} />
 				<p><strong>Category: </strong>{strCategory}</p>
 				<p><strong>Area: </strong>{strArea}</p>
 				<p><strong>Tags: </strong>{strTags}</p>
@@ -31,8 +31,13 @@ function MealDisplay({ data: meal }) {
 
 		<div className="youtube-container">
 			<p><strong>Video Recipe:</strong></p>
-			<iframe width="560" height="349"
-				src={`https://www.youtube.com/embed/${strYoutube.slice(-11)}`} frameborder="0" allowfullscreen>
+			<iframe 
+				width="560" 
+				height="349" 
+				title="recipeVideo"
+				src={`https://www.youtube.com/embed/${strYoutube.slice(-11)}`} 
+				frameBorder="0" 
+				allowFullScreen>
 			</iframe>
 		</div>
 
