@@ -31,10 +31,11 @@ function MealDisplay({ data: meal }) {
 
 		<div className="youtube-container">
 			<p><strong>Video Recipe:</strong></p>
-			<iframe width="100%"
-				src={`https://www.youtube.com/embed/${strYoutube.slice(-11)}`}>
+			<iframe width="560" height="349"
+				src={`https://www.youtube.com/embed/${strYoutube.slice(-11)}`} frameborder="0" allowfullscreen>
 			</iframe>
 		</div>
+
       </div>
     );
   }
