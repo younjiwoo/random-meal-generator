@@ -1,5 +1,4 @@
 import React from 'react';
-import './IngredientList.scss';
 
 function IngredientList({ recipe }) {
 
