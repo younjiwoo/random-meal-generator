@@ -1,33 +1,45 @@
 import React from 'react';
 import './MealDisplay.scss';
+import IngredientList from './IngredientList.js';
 
-function MealDisplay(props) {
 
-    const ingredients = [];
-    for (let i = 1; i <= 30; i++) {
-        if (props.data[`strIngredient${i}`]) {
-            ingredients.push(`${props.data[`strIngredient${i}`]} - ${props.data[`strMeasure${i}`]}`);
-        } else {
-            break; // stop if no more ingredients
-        }
-    }
+function MealDisplay({ data: meal }) {
 
-    const ingredientList = ingredients.map(ingredient => {
-        return <li>{ingredient}</li>
-    })
-
+    const { strMeal, strMealThumb, strCategory, strArea, strTags, strInstructions, strYoutube } = meal;
+    
     return (
       <div className="meal-container">
-        <img src={props.data.strMealThumb} alt={`Image of ${props.data.strMeal}`} />
-        <h3 className="blue-font">{props.data.name}</h3>
-        <p><strong>Category: </strong>{props.data.strCategory}</p>
-        <p><strong>Area: </strong>{props.data.strArea}</p>
-        <p><strong>Tags: </strong>{props.data.strTags}</p>
-        <p><strong>Ingredients: </strong></p>
-        <ul>
-            {ingredientList}
-        </ul>
-       
+
+		<div className="columns">
+
+			<div className="left-column">
+				<img src={strMealThumb} alt={`${strMeal}`} />
+				<p><strong>Category: </strong>{strCategory}</p>
+				<p><strong>Area: </strong>{strArea}</p>
+				<p><strong>Tags: </strong>{strTags}</p>
+				<p><strong>Ingredients: </strong></p>
+				<ul>
+					<IngredientList recipe={meal} />
+				</ul>
+			</div>
+		
+			<div className="right-column">
+				<h3 className="blue-font">{strMeal}</h3>
+				<p className="instructions">{strInstructions}</p>
+			</div>
+		</div>
+
+		<div className="youtube-container">
+			<p><strong>Video Recipe:</strong></p>
+			<iframe 
+				width="560" 
+				height="349" 
+				title="recipeVideo"
+				src={`https://www.youtube.com/embed/${strYoutube.slice(-11)}`} 
+				frameBorder="0" 
+				allowFullScreen>
+			</iframe>
+		</div>
 
       </div>
     );

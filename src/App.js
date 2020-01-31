@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import MealDisplay from './MealDisplay.js';
 import './App.scss';
 import Button from '@material-ui/core/Button';
@@ -10,18 +10,15 @@ function App() {
 		let res = await fetch("https://www.themealdb.com/api/json/v1/1/random.php");
 		res = await res.json();
 		setRecipe(res.meals[0]);
-		console.log(res.meals[0]);
 	}
-  
-	// useEffect(() => {
-	// 	fetchRecipe();
-	// }, []);
 
 	return (
 		<div className="App">
-			<h3>Feeling hungry?</h3>
-			<h5>Get a random meal by clicking below</h5>
-			<Button variant="contained" onClick={() => fetchRecipe()}>Get Meal 🍔</Button>
+			<div id="main">
+				<h2>Feeling hungry?</h2>
+				<h5>Get a random meal by clicking below</h5>
+				<Button variant="contained" onClick={() => fetchRecipe()}>Get Meal <span role="img" aria-label="hamburger emoji">🍔</span></Button>
+			</div>
 			{
 				recipe &&
 

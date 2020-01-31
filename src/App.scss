@@ -1,7 +1,23 @@
 .App {
 	text-align: center;
+	font-family: 'Lora', serif;
+
+	& > h2 {
+		font-family: 'Coming Soon', cursive;
+	}
 
 	.blue-font {
 		color: #33C3F0;
+	}
+
+	#main {
+		margin-bottom: 30px;
+	}
+
+	@media (min-width: 1025px) {
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 }
