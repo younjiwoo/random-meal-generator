@@ -19,12 +19,10 @@ function App() {
 				<h5>Get a random meal by clicking below</h5>
 				<Button variant="contained" onClick={() => fetchRecipe()}>Get Meal <span role="img" aria-label="hamburger emoji">🍔</span></Button>
 			</div>
+			
 			{
 				recipe &&
-
-					<MealDisplay 
-						data={recipe}
-					/>
+					<MealDisplay data={recipe} />
 			}
 		</div>
 	);
